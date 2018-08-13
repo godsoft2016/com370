@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="startbootstrap.resume.gh.pages"
+		template="/WEB-INF/jsp/god/com/layouts/startbootstrap-resume-gh-pages/layout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-resume-gh-pages/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-resume-gh-pages/menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-resume-gh-pages/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-resume-gh-pages/footer.jsp" />
+	</definition>
+
+	<definition name="god/com/main/*" extends="startbootstrap.resume.gh.pages">
+		<put-attribute name="body" value="/WEB-INF/jsp/god/com/main/{1}.jsp" />
+	</definition>
+
+	<definition name="egovframework/com/cop/bbs/*" extends="startbootstrap.resume.gh.pages">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/god/com/cop/bbs/{1}.jsp" />
+	</definition>
+
+</tiles-definitions>
