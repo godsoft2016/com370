@@ -44,16 +44,16 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#about">About</a>
+            <a class="nav-link js-scroll-trigger" href="#about">인사말</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#experience">Experience</a>
+            <a class="nav-link js-scroll-trigger" href="#experience">연혁</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#education">Education</a>
+            <a class="nav-link js-scroll-trigger" href="#education">찾아오시는길</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="#skills">Skills</a>
+            <a class="nav-link js-scroll-trigger" href="#skills">주요사업</a>
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="#interests">Interests</a>
@@ -63,6 +63,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#notice">공지사항</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#notice">자료실</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#notice">QnA</a>
           </li>
         </ul>
       </div>
