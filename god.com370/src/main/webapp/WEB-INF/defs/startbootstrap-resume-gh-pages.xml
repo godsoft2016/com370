@@ -22,9 +22,9 @@
 		<put-attribute name="body" value="/WEB-INF/jsp/god/com/main/{1}.jsp" />
 	</definition>
 
-	<definition name="egovframework/com/cop/bbs/*" extends="startbootstrap.resume.gh.pages">
+	<definition name="egovframework/com/cop/bbs/EgovNotice*" extends="startbootstrap.resume.gh.pages">
 		<put-attribute name="body"
-			value="/WEB-INF/jsp/god/com/cop/bbs/{1}.jsp" />
+			value="/WEB-INF/jsp/god/com/cop/bbs/EgovNotice{1}.jsp" />
 	</definition>
 
 </tiles-definitions>

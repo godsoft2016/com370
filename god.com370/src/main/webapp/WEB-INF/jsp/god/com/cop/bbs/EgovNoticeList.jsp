@@ -61,7 +61,7 @@
 
       <hr class="m-0">
 
-      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="notice">
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="${boardVO.bbsId}">
         <div class="my-auto">
           <h2 class="mb-5"><c:out value="${brdMstrVO.bbsNm}"/></h2>
 
@@ -198,7 +198,7 @@
 <script>
 // 	$( document ).ready(function() {
 	window.onload = function() {
-		location.href = '#notice';
+		location.href = '#${boardVO.bbsId}';
 	}
 // 	});
 </script>

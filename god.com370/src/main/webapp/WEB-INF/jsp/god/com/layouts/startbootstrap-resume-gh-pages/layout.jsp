@@ -62,13 +62,16 @@
             <a class="nav-link js-scroll-trigger" href="#awards">Awards</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#notice">공지사항</a>
+<%--             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#BBSMSTR_000000000001">공지사항</a> --%>
+            <a class="nav-link js-scroll-trigger" href="#BBSMSTR_000000000001" onclick="location.href = '${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001'; return false;">공지사항</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#notice">자료실</a>
+<%--             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000011#BBSMSTR_000000000011">자료실</a> --%>
+            <a class="nav-link js-scroll-trigger" href="#BBSMSTR_000000000011" onclick="location.href = '${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000011'; return false;">자료실</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000001#notice">QnA</a>
+<%--             <a class="nav-link js-scroll-trigger" href="${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000012#BBSMSTR_000000000012">QnA</a> --%>
+            <a class="nav-link js-scroll-trigger" href="#BBSMSTR_000000000012" onclick="location.href = '${pageContext.request.contextPath}/cop/bbs/selectBoardList.do?bbsId=BBSMSTR_000000000012'; return false;">QnA</a>
           </li>
         </ul>
       </div>
