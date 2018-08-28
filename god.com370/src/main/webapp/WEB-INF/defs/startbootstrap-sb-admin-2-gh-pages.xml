@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN"
+       "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+
+<tiles-definitions>
+
+	<definition name="startbootstrap.sb.admin.2.gh.pages"
+		template="/WEB-INF/jsp/god/com/layouts/startbootstrap-sb-admin-2-gh-pages/layout.jsp">
+		<put-attribute name="header"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-sb-admin-2-gh-pages/header.jsp" />
+		<put-attribute name="menu"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-sb-admin-2-gh-pages/menu.jsp" />
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-sb-admin-2-gh-pages/body.jsp" />
+		<put-attribute name="footer"
+			value="/WEB-INF/jsp/god/com/layouts/startbootstrap-sb-admin-2-gh-pages/footer.jsp" />
+	</definition>
+
+	<definition name="god/com/main/*" extends="startbootstrap.sb.admin.2.gh.pages">
+		<put-attribute name="body" value="/WEB-INF/jsp/god/com/main/{1}.jsp" />
+	</definition>
+
+	<definition name="egovframework/com/cop/bbs/EgovNotice*"
+		extends="startbootstrap.sb.admin.2.gh.pages">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/god/com/cop/bbs/EgovNotice{1}.jsp" />
+	</definition>
+
+</tiles-definitions>
