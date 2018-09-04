@@ -28,4 +28,8 @@
 			value="/WEB-INF/jsp/god/com/cop/bbs/EgovNotice{1}.jsp" />
 	</definition>
 
+	<definition name="egovframework/com/uat/uia/EgovLoginUsr"
+	template="/WEB-INF/jsp/god/com/uat/uia/EgovLoginUsr.jsp">
+	</definition>
+
 </tiles-definitions>
