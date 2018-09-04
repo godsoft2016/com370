@@ -29,7 +29,17 @@
 	</definition>
 
 	<definition name="egovframework/com/uat/uia/EgovLoginUsr"
-	template="/WEB-INF/jsp/god/com/uat/uia/EgovLoginUsr.jsp">
+		template="/WEB-INF/jsp/god/com/uat/uia/EgovLoginUsr.jsp">
+	</definition>
+
+	<definition name="god/com/EgovPageLink/*" extends="startbootstrap.sb.admin.2.gh.pages">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/god/com/EgovPageLink/{1}.jsp" />
+	</definition>
+
+	<definition name="god/com/EgovPageLink/*/*" extends="startbootstrap.sb.admin.2.gh.pages">
+		<put-attribute name="body"
+			value="/WEB-INF/jsp/god/com/EgovPageLink/{1}/{2}.jsp" />
 	</definition>
 
 </tiles-definitions>
