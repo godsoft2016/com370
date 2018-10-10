@@ -6,10 +6,46 @@
 	<insert id="TableDAO.insert" parameterClass="god.com.table.service.TableVO">
 <![CDATA[
 INSERT INTO tb_table
-(table_ID, APPLCNT_NM, USE_AT, FRST_REGIST_PNTTM)
+(table_id, table_nm
+, COLUMN_NM1
+, COLUMN_NM2
+, COLUMN_NM3
+, USE_AT, FRST_REGIST_PNTTM)
 VALUES
-( #tableId#, #applcntNm#, #useAt#, SYSDATE())
+( (select ifnull(max(table_id), 0) + 1 from tb_table t1), #tableNm#
+, #columnNm1#
+, #columnNm2#
+, #columnNm3#
+, #useAt#, SYSDATE())
 ]]>
 	</insert>
+
+	<select id="TableDAO.selectList" parameterClass="god.com.table.service.TableVO"
+		resultClass="egovframework.rte.psl.dataaccess.util.EgovMap">
+ 		<![CDATA[
+			SELECT 
+				*
+			FROM
+				tb_table
+			WHERE
+				1 = 1
+]]>
+
+		<isNotEmpty property="tableNm">
+<![CDATA[
+and table_nm = #tableNm#
+]]>
+		</isNotEmpty>
+
+		<isNotEmpty property="useAt">
+<![CDATA[
+and use_At = #useAt#
+]]>
+		</isNotEmpty>
+
+<![CDATA[
+			ORDER BY table_id desc
+ 		]]>
+	</select>
 
 </sqlMap>

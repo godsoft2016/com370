@@ -1,6 +1,4 @@
-package god.com.table.web;
-
-import java.util.List;
+package god.com.table2.web;
 
 import javax.annotation.Resource;
 
@@ -10,36 +8,30 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import egovframework.rte.psl.dataaccess.util.EgovMap;
 import god.com.table.service.TableVO;
 import god.com.table.service.impl.TableDAO;
 
 @Controller
-public class TableController {
+public class Table2Controller {
 
-	private static final Logger LOGGER = LoggerFactory.getLogger(TableController.class);
+	private static final Logger LOGGER = LoggerFactory.getLogger(Table2Controller.class);
 
 	@Resource(name = "TableDAO")
 	private TableDAO tableDAO;
 
-	@RequestMapping("/table/selectTableList.do")
-	public String selectList(TableVO vo, ModelMap model) throws Exception {
+	@RequestMapping("/table2/selectTable2List.do")
+	public String selectList(ModelMap model) {
 		LOGGER.debug("목록");
-
-		List<EgovMap> results = tableDAO.selectList(vo);
-
-		model.addAttribute("results", results);
-
-		return "god/com/table/selectTableList";
+		return "god/com/table2/selectTable2List";
 	}
 
-	@RequestMapping("/table/insertTableForm.do")
+	@RequestMapping("/table2/insertTable2Form.do")
 	public String insertForm(ModelMap model) {
 		LOGGER.debug("등록폼");
-		return "god/com/table/insertTableForm";
+		return "god/com/table2/insertTable2Form";
 	}
 
-	@RequestMapping("/table/insertTable.do")
+	@RequestMapping("/table2/insertTable2.do")
 	public String insert(TableVO vo, ModelMap model) throws Exception {
 		LOGGER.debug("등록");
 		LOGGER.debug("vo=" + vo);
@@ -49,7 +41,7 @@ public class TableController {
 
 		tableDAO.insert(vo);
 
-		return "god/com/table/insertTable";
+		return "god/com/table2/insertTable2";
 	}
 
 }

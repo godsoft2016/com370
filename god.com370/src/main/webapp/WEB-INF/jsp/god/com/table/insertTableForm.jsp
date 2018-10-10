@@ -49,6 +49,7 @@ P.HStyle16, LI.HStyle16, DIV.HStyle16
 
 <BODY>
 <form action="${pageContext.request.contextPath}/table/insertTable.do" id="insertTable" method="post" name="insertTable">
+<input type="text" name="tableNm" value="table1">
 <input type="submit" value="저장">
 <P CLASS=HStyle0>
 <TABLE border="1" cellspacing="0" cellpadding="0" style='border-collapse:collapse;border:none;'>
@@ -108,10 +109,13 @@ P.HStyle16, LI.HStyle16, DIV.HStyle16
 	</TD>
 	<TD colspan="10" width="285" height="37" valign="top" style='border-left:solid #5d5d5d 0.4pt;border-right:solid #5d5d5d 0.4pt;border-top:solid #000000 0.4pt;border-bottom:solid #5d5d5d 0.4pt;padding:1.4pt 5.1pt 1.4pt 2.8pt'>
 	<P CLASS=HStyle0 STYLE='margin-top:1.0pt;line-height:110%;'><SPAN STYLE='font-family:"돋움체";'>성명(한자)</SPAN></P>
-<input type="text" id="applcntNm" name="applcntNm">
+<!-- <input type="text" id="applcntNm" name="applcntNm"> -->
+<input type="text" id="columnNm1" name="columnNm1">
+(<input type="text" id="columnNm2" name="columnNm2">)
 	</TD>
 	<TD colspan="14" width="287" height="37" valign="top" style='border-left:solid #5d5d5d 0.4pt;border-right:none;border-top:solid #000000 0.4pt;border-bottom:solid #5d5d5d 0.4pt;padding:1.4pt 5.1pt 1.4pt 2.8pt'>
 	<P CLASS=HStyle0 STYLE='margin-top:1.0pt;line-height:110%;'><SPAN STYLE='font-family:"돋움체";'>주민등록번호</SPAN></P>
+<input type="text" id="columnNm3" name="columnNm3">
 	</TD>
 </TR>
 <TR>
