@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
 <HTML>
 
@@ -48,9 +49,42 @@ P.HStyle16, LI.HStyle16, DIV.HStyle16
 </HEAD>
 
 <BODY>
+
+<c:choose>
+	<c:when test="${not empty tableVO.tableId}">
+
+<form action="${pageContext.request.contextPath}/table/upateTable.do" id="insertTable" method="post" name="insertTable">
+<input type="hidden" name="tableNm" value="table1">
+<input type="hidden" name="tableId" value="${select.tableId}">
+<%-- <input type="text" name="tableId" value="${tableVO.tableId}"> --%>
+<%-- <input type="text" name="tableId" value="${param.tableId}"> --%>
+
+<input type="submit" value="수정">
+<a href="deleteTable.do?tableId=${select.tableId}" onclick="return btnDelete(this);">삭제</a>
+
+<script type="text/javascript">
+function btnDelete(_this) {
+	console.log('_this', _this);
+	console.log('_this.href', _this.href);
+	if (confirm('삭제하시겠습니까?')) {
+		return true;
+	} else {
+		return false;
+	}
+}
+</script>
+
+	</c:when>
+	<c:otherwise>
+
 <form action="${pageContext.request.contextPath}/table/insertTable.do" id="insertTable" method="post" name="insertTable">
-<input type="text" name="tableNm" value="table1">
+<input type="hidden" name="tableNm" value="table1">
+
 <input type="submit" value="저장">
+
+	</c:otherwise>
+</c:choose>
+
 <P CLASS=HStyle0>
 <TABLE border="1" cellspacing="0" cellpadding="0" style='border-collapse:collapse;border:none;'>
 <TR>
@@ -110,8 +144,8 @@ P.HStyle16, LI.HStyle16, DIV.HStyle16
 	<TD colspan="10" width="285" height="37" valign="top" style='border-left:solid #5d5d5d 0.4pt;border-right:solid #5d5d5d 0.4pt;border-top:solid #000000 0.4pt;border-bottom:solid #5d5d5d 0.4pt;padding:1.4pt 5.1pt 1.4pt 2.8pt'>
 	<P CLASS=HStyle0 STYLE='margin-top:1.0pt;line-height:110%;'><SPAN STYLE='font-family:"돋움체";'>성명(한자)</SPAN></P>
 <!-- <input type="text" id="applcntNm" name="applcntNm"> -->
-<input type="text" id="columnNm1" name="columnNm1">
-(<input type="text" id="columnNm2" name="columnNm2">)
+<input type="text" id="columnNm1" name="columnNm1" value="${select.columnNm1}">
+(<input type="text" id="columnNm2" name="columnNm2" value="${select.columnNm2}">)
 	</TD>
 	<TD colspan="14" width="287" height="37" valign="top" style='border-left:solid #5d5d5d 0.4pt;border-right:none;border-top:solid #000000 0.4pt;border-bottom:solid #5d5d5d 0.4pt;padding:1.4pt 5.1pt 1.4pt 2.8pt'>
 	<P CLASS=HStyle0 STYLE='margin-top:1.0pt;line-height:110%;'><SPAN STYLE='font-family:"돋움체";'>주민등록번호</SPAN></P>

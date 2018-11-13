@@ -43,9 +43,38 @@ and use_At = #useAt#
 ]]>
 		</isNotEmpty>
 
+		<isNotEmpty property="columnNm1">
+<![CDATA[
+and column_Nm1 like concat('%', #columnNm1#, '%')
+]]>
+		</isNotEmpty>
+
 <![CDATA[
 			ORDER BY table_id desc
  		]]>
 	</select>
+
+	<select id="TableDAO.select" parameterClass="god.com.table.service.TableVO"
+		resultClass="egovframework.rte.psl.dataaccess.util.EgovMap">
+<![CDATA[
+SELECT 
+	*
+FROM
+	tb_table
+WHERE table_id = #tableId#
+]]>
+	</select>
+
+	<update id="TableDAO.update">
+		update tb_table set column_nm1 = #columnNm1# where table_id = #tableId#
+	</update>
+
+	<update id="TableDAO.delete">
+		update tb_table set use_at = 'N' where table_id = #tableId#
+	</update>
+
+	<delete id="TableDAO.delete2">
+		delete from tb_table where table_id = #tableId#
+	</delete>
 
 </sqlMap>

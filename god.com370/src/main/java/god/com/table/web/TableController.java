@@ -26,6 +26,8 @@ public class TableController {
 	public String selectList(TableVO vo, ModelMap model) throws Exception {
 		LOGGER.debug("목록");
 
+		vo.setUseAt("Y");
+
 		List<EgovMap> results = tableDAO.selectList(vo);
 
 		model.addAttribute("results", results);
@@ -34,8 +36,21 @@ public class TableController {
 	}
 
 	@RequestMapping("/table/insertTableForm.do")
-	public String insertForm(ModelMap model) {
+	public String insertForm(TableVO vo, ModelMap model) {
 		LOGGER.debug("등록폼");
+
+		LOGGER.debug("getTableId=" + vo.getTableId());
+		LOGGER.debug("getMulti=" + vo.getMulti());
+
+		if ("update".equals(vo.getMulti())) {
+			EgovMap select = tableDAO.select(vo);
+			model.addAttribute("select", select);
+
+			model.addAttribute("select2", tableDAO.select(vo));
+		} else {
+
+		}
+
 		return "god/com/table/insertTableForm";
 	}
 
@@ -50,6 +65,51 @@ public class TableController {
 		tableDAO.insert(vo);
 
 		return "god/com/table/insertTable";
+	}
+
+	@RequestMapping("/table/updateTable.do")
+	public String update(TableVO vo, ModelMap model) throws Exception {
+		LOGGER.debug("수정");
+		LOGGER.debug("vo=" + vo);
+		LOGGER.debug("getApplcntNm=" + vo.getApplcntNm());
+		System.out.println("vo=" + vo);
+		System.out.println("getApplcntNm=" + vo.getApplcntNm());
+
+		int update = tableDAO.update(vo);
+
+		model.addAttribute("update", update);
+
+		return "god/com/table/updateTable";
+	}
+
+	@RequestMapping("/table/deleteTable.do")
+	public String delete(TableVO vo, ModelMap model) throws Exception {
+		LOGGER.debug("삭제");
+		LOGGER.debug("vo=" + vo);
+		LOGGER.debug("getTableId=" + vo.getTableId());
+		System.out.println("vo=" + vo);
+		System.out.println("getTableId=" + vo.getTableId());
+
+		int delete = tableDAO.delete(vo);
+
+		model.addAttribute("delete", delete);
+
+		return "god/com/table/deleteTable";
+	}
+
+	@RequestMapping("/table/delete2Table.do")
+	public String delete2(TableVO vo, ModelMap model) throws Exception {
+		LOGGER.debug("삭제");
+		LOGGER.debug("vo=" + vo);
+		LOGGER.debug("getTableId=" + vo.getTableId());
+		System.out.println("vo=" + vo);
+		System.out.println("getTableId=" + vo.getTableId());
+
+		int delete = tableDAO.delete2(vo);
+
+		model.addAttribute("delete", delete);
+
+		return "god/com/table/deleteTable";
 	}
 
 }

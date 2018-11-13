@@ -20,6 +20,8 @@ public class TableVO extends ComDefaultVO {
 	private String applcntNm;
 	private String useAt;
 
+	private String multi;
+
 	public String getTableId() {
 		return tableId;
 	}
@@ -74,6 +76,14 @@ public class TableVO extends ComDefaultVO {
 
 	public void setUseAt(String useAt) {
 		this.useAt = useAt;
+	}
+
+	public String getMulti() {
+		return multi;
+	}
+
+	public void setMulti(String multi) {
+		this.multi = multi;
 	}
 
 }

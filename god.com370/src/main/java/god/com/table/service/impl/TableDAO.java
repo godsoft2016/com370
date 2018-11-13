@@ -20,4 +20,20 @@ public class TableDAO extends EgovComAbstractDAO {
 		return (List<EgovMap>) list("TableDAO.selectList", vo);
 	}
 
+	public EgovMap select(TableVO vo) {
+		return (EgovMap) select("TableDAO.select", vo);
+	}
+
+	public int update(TableVO vo) {
+		return update("TableDAO.update", vo);
+	}
+
+	public int delete(TableVO vo) {
+		return update("TableDAO.delete", vo);
+	}
+
+	public int delete2(TableVO vo) {
+		return delete("TableDAO.delete2", vo);
+	}
+
 }
