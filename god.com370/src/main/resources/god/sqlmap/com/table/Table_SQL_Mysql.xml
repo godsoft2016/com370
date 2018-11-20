@@ -12,7 +12,7 @@ INSERT INTO tb_table
 , COLUMN_NM3
 , USE_AT, FRST_REGIST_PNTTM)
 VALUES
-( (select ifnull(max(table_id), 0) + 1 from tb_table t1), #tableNm#
+( (select ifnull(max(cast(table_id as unsigned)), 0) + 1 from tb_table t1), #tableNm#
 , #columnNm1#
 , #columnNm2#
 , #columnNm3#
@@ -22,7 +22,7 @@ VALUES
 
 	<select id="TableDAO.selectList" parameterClass="god.com.table.service.TableVO"
 		resultClass="egovframework.rte.psl.dataaccess.util.EgovMap">
- 		<![CDATA[
+		<![CDATA[
 			SELECT 
 				*
 			FROM
@@ -50,8 +50,42 @@ and column_Nm1 like concat('%', #columnNm1#, '%')
 		</isNotEmpty>
 
 <![CDATA[
-			ORDER BY table_id desc
- 		]]>
+			ORDER BY cast(table_id as unsigned) desc
+			LIMIT #recordCountPerPage# OFFSET #firstIndex#
+		]]>
+	</select>
+
+	<select id="TableDAO.selectListCnt" parameterClass="god.com.table.service.TableVO"
+		resultClass="int">
+		<![CDATA[
+			SELECT
+				count(*)
+			FROM
+				tb_table
+			WHERE
+				1 = 1
+]]>
+
+		<isNotEmpty property="tableNm">
+<![CDATA[
+and table_nm = #tableNm#
+]]>
+		</isNotEmpty>
+
+		<isNotEmpty property="useAt">
+<![CDATA[
+and use_At = #useAt#
+]]>
+		</isNotEmpty>
+
+		<isNotEmpty property="columnNm1">
+<![CDATA[
+and column_Nm1 like concat('%', #columnNm1#, '%')
+]]>
+		</isNotEmpty>
+
+<![CDATA[
+		]]>
 	</select>
 
 	<select id="TableDAO.select" parameterClass="god.com.table.service.TableVO"
