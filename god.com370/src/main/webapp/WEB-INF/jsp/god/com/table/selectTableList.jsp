@@ -55,7 +55,7 @@
 					<td><a
 						href="${pageContext.request.contextPath}/table/insertTableForm.do?multi=update&tableId=${item.tableId}">${item.tableId}</a></td>
 					<td><a
-						href="insertTableForm.do?multi=update&tableId=${item.tableId}">${item.tableId}</a></td>
+						href="insertTableForm.do?multi=update&tableId=${item.tableId}">${item.columnNm1}</a></td>
 					<td><a href="deleteTable.do?tableId=${item.tableId}"
 						onclick="return btnDelete(this);">삭제</a></td>
 					<td><a href="delete2Table.do?tableId=${item.tableId}"

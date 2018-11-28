@@ -12,8 +12,16 @@
 	<script type="text/javascript">
 		$(document).ready(function() {
 
+			list();
+
+		});
+
+		function list() {
+
 			var url = 'table/selectTableList.do';
-			var data = {};
+			var data = {
+			// 				columnNm1 : '16'
+			};
 			function success(data, textStatus, jqXHR) {
 				console.log('data', data);
 				console.log('textStatus', textStatus);
@@ -32,9 +40,33 @@
 			}
 			var dataType = 'json';
 
-			$.get(url, data, success, dataType);
+			// 			$.get(url, data, success, dataType);
+			$.post(url, data, success, dataType);
 
-		});
+		}
+
+		function insert() {
+
+			var url = 'table/insertTable.do';
+			var data = {
+				tableNm : 'table1',
+				columnNm1 : '이백행 ' + new Date(),
+				useAt : 'Y',
+			};
+			function success(data, textStatus, jqXHR) {
+				console.log('data', data);
+				console.log('textStatus', textStatus);
+				console.log('jqXHR', jqXHR);
+
+				list();
+
+			}
+			var dataType = 'json';
+
+			// 			$.get(url, data, success, dataType);
+			$.post(url, data, success, dataType);
+
+		}
 	</script>
 
 	<table id="table1" border="1">
