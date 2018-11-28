@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+
+	<script type="text/javascript"
+		src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+
+			var url = 'table/selectTableList.do';
+			var data = {};
+			function success(data, textStatus, jqXHR) {
+				console.log('data', data);
+				console.log('textStatus', textStatus);
+				console.log('jqXHR', jqXHR);
+
+				var htmlString = '';
+
+				for (var i = 0, l = data.results.length; i < l; i++) {
+					htmlString += '<tr>';
+					htmlString += '<td>' + data.results[i].tableId + '</td>';
+					htmlString += '<td>' + data.results[i].columnNm1 + '</td>';
+					htmlString += '</tr>';
+				}
+
+				$('#table1 tbody').html(htmlString);
+			}
+			var dataType = 'json';
+
+			$.get(url, data, success, dataType);
+
+		});
+	</script>
+
+	<table id="table1" border="1">
+		<thead>
+			<tr>
+				<th>번호</th>
+				<th>제목</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+
+</body>
+</html>
